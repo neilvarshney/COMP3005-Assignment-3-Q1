@@ -1,6 +1,6 @@
 ## libraries used to connect ot POSTGRES database
 from psycopg2 import Error
-from db import create_table, getAllStudents, addStudent, updateStudentEmail, deleteStudent, closeDB
+from database.db import create_table, getAllStudents, addStudent, updateStudentEmail, deleteStudent, closeDB
 
 if __name__ == "__main__":
 
