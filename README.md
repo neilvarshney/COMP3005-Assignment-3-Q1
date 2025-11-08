@@ -18,4 +18,4 @@ A simple command line interface application that allows a user to manage a stude
 # Video Demonstration
 Here is the link to watch a video demonstration on this program:
 
-https://youtu.be/TRJx8k6izJ8 
+[![Demo Video](https://www.youtube.com/watch?v=TRJx8k6izJ8)](https://www.youtube.com/watch?v=TRJx8k6izJ8)
