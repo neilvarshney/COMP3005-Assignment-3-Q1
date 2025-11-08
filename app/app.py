@@ -23,9 +23,12 @@ if __name__ == "__main__":
             
             option = input("\nEnter your option: ")
 
+            ## option 1, to get all students
             if option == "1":
                 getAllStudents()
 
+            
+            ## option 2, to add a student
             elif option == "2":
                 first_name = input("Enter first name: ")
                 last_name = input("Enter last name: ")
@@ -34,20 +37,24 @@ if __name__ == "__main__":
 
                 addStudent(first_name, last_name, email, enrollment_date)
 
+            ## option 3, change email of a student
             elif option == "3":
                 student_id = input("Enter student id: ")
                 email = input("Enter new email: ")
 
                 updateStudentEmail(student_id, email)
 
+            ## option 4, delete a student
             elif option == "4":
                 student_id = input("Enter student id: ")
 
                 deleteStudent(student_id)
 
+            ## option 0, to end the program
             elif option == "0":
                 end = True
             
+            ## invalid option chosen, print error message
             else:
                 print("Invalid option. Please try again.")
 
