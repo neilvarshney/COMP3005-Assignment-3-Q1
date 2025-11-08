@@ -14,3 +14,8 @@ A simple command line interface application that allows a user to manage a stude
 `pip install psycopg2-binary`
 4. In the terminal, in the /app/ directory, type the following to run the program: `python app.py`
 5. Type 0 to end the program.
+
+# Video Demonstration
+Here is the link to watch a video demonstration on this program:
+
+https://youtu.be/TRJx8k6izJ8 
