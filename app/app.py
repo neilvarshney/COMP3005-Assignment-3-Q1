@@ -1,13 +1,17 @@
-## libraries used to connect ot POSTGRES database
+## libraries used to show database errors
 from psycopg2 import Error
+
+## import the database functions from db.py (which is a package inside the database folder)
 from database.db import create_table, getAllStudents, addStudent, updateStudentEmail, deleteStudent, closeDB
 
+## this is the main function of the app. this will run the main functionality of the program
 if __name__ == "__main__":
 
-    ## connect to the database
     try:
+        ## connect to the database and create the table
         create_table()
 
+        ## main loop to show options to the user, the U.I
         end = False
         while not end:
             print("\nOptions:")

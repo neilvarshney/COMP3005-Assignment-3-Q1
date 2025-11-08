@@ -1,3 +1,4 @@
+## libraries used to connect to POSTGRES database
 import psycopg2
 from psycopg2 import Error
 
