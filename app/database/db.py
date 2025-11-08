@@ -13,7 +13,7 @@ try:
         database="COMP3005_A3"
     )
 
-    ## set the cursor to do datatbase operations
+    ## set the cursor to do database operations
     cursor = connection.cursor()
 
 ## if error occurs during the database connection, we would print the error
@@ -23,7 +23,7 @@ except Error as e:
     print("Error connecting to the database", e)
 
 ## this function would create the students table in the database if it doesnt already exist, and then
-## insert the intial data into the table using our addStudent function
+## insert the initial data into the table using our addStudent function
 def create_table():
     if connection:
         create_table_query = "CREATE TABLE IF NOT EXISTS students " \
@@ -34,7 +34,7 @@ def create_table():
             "enrollment_date DATE);"
         cursor.execute(create_table_query)
 
-        ## insert inital data to the database using our addStudent function that we created
+        ## insert initial data to the database using our addStudent function that we created
         addStudent('John', 'Doe', 'john.doe@example.com', '2023-09-01')
         addStudent('Jane', 'Smith', 'jane.smith@example.com', '2023-09-01')
         addStudent('Jim', 'Beam', 'jim.beam@example.com', '2023-09-02')
@@ -50,7 +50,7 @@ def getAllStudents():
             ## fectchall() reads all the tuples from the SELECT query and returns as a list of tuples
             tuples = cursor.fetchall()
 
-            ## this reads that list and prints each tuple sperately
+            ## this reads that list and prints each tuple seperately
             print(*tuples, sep="\n")
 
         except Error as e:
@@ -67,6 +67,8 @@ def addStudent(first_name, last_name, email, enrollment_date):
 
             cursor.execute(add_student_query, student_data)
             connection.commit()
+
+            print(f"\nStudent {first_name} {last_name} added successfully.")
 
         ## if error occurs, like invalid type of data or duplicate email, then print the error message
         except Error as e:
@@ -109,6 +111,8 @@ def deleteStudent(student_id):
                 delete_student_query = "DELETE FROM students WHERE students.student_id = %s;"
                 cursor.execute(delete_student_query, (student_id,))
                 connection.commit()
+
+                print(f"\nStudent with ID {student_id} deleted successfully.")
             else:
                 print(f"\nStudent with ID {student_id} not found.")
         

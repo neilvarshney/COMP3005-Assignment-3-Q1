@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     ## if error occurs during connection, then print error
     except Error as e:
-        print(f"Error: ", e)
+        print(f"Error: {e}")
 
 
     ## once the program is done, close the connection to the database
