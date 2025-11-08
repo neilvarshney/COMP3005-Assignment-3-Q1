@@ -107,12 +107,14 @@ def deleteStudent(student_id):
             cursor.execute(student_exists_query, (student_id,))
             student = cursor.fetchone()
 
+            ## if student exists, then execute the delete query to remove the student from the table
             if student:
                 delete_student_query = "DELETE FROM students WHERE students.student_id = %s;"
                 cursor.execute(delete_student_query, (student_id,))
                 connection.commit()
 
                 print(f"\nStudent with ID {student_id} deleted successfully.")
+                
             else:
                 print(f"\nStudent with ID {student_id} not found.")
         
